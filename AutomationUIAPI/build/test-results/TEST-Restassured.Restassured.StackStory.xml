@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Restassured.Restassured.StackStory" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-08-04T10:00:11" hostname="DS-448A5BBF25A0" time="19.671">
+  <properties/>
+  <testcase name="run" classname="Restassured.Restassured.StackStory" time="19.671"/>
+  <system-out><![CDATA[Processing system properties {}
+Running story Restassured/Restassured/stack_story.story
+Sample story
+(Restassured/Restassured/stack_story.story)
+Scenario: JSON status field valation
+ExcecutionYES2
+Return String:http://10.146.211.38:2020/api/v1/traffic/create/
+Return String:MN|Traffic Light Phase on Mass Ave
+Column Wisehttp://10.146.211.38:2020/api/v1/traffic/create/JSONPOSTdirection|descriptionMN|Traffic Light Phase on Mass AveAPIYes
+jsonAsMap{description=Traffic Light Phase on Mass Ave, direction=MN}
+Added the post request and the reponse is {"message":"Data added to the account!","data":{"__v":0,"updatedAt":"2016-08-04T10:00:16.207Z","createdAt":"2016-08-04T10:00:16.207Z","_id":"57a3123052327ca41527349c","trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]}}]}}
+SetValue2 true
+valuestrue
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:01:00|1|null|1|1|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:01:00|1|null|1|1|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:18.362Z","createdAt":"2016-08-04T10:00:16.207Z","__v":1,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:01:05|1|null|2|1|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:01:05|1|null|2|1|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:19.158Z","createdAt":"2016-08-04T10:00:16.207Z","__v":2,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:01:30|7|null|35|2|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:01:30|7|null|35|2|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:19.766Z","createdAt":"2016-08-04T10:00:16.207Z","__v":3,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:02:30|2|null|1|1|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:02:30|2|null|1|1|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:20.348Z","createdAt":"2016-08-04T10:00:16.207Z","__v":4,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:02:35|1|2|null|0|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:02:35|1|2|null|0|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:20.861Z","createdAt":"2016-08-04T10:00:16.207Z","__v":5,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:03:00|8|null|25|1|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:03:00|8|null|25|1|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:21.336Z","createdAt":"2016-08-04T10:00:16.207Z","__v":6,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:04:00|0|null|1|2|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:04:00|0|null|1|2|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:21.800Z","createdAt":"2016-08-04T10:00:16.207Z","__v":7,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:04:05|0|null|1|1|vehicle|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:04:05|0|null|1|1|vehicle|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:22.159Z","createdAt":"2016-08-04T10:00:16.207Z","__v":8,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:00:00|10|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:00:00|10|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:22.533Z","createdAt":"2016-08-04T10:00:16.207Z","__v":9,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:01:00|1|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:01:00|1|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:22.892Z","createdAt":"2016-08-04T10:00:16.207Z","__v":10,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:01:05|0|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:01:05|0|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:23.243Z","createdAt":"2016-08-04T10:00:16.207Z","__v":11,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:01:30|13|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:01:30|13|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:23.587Z","createdAt":"2016-08-04T10:00:16.207Z","__v":12,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:02:30|1|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:02:30|1|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:23.957Z","createdAt":"2016-08-04T10:00:16.207Z","__v":13,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:02:35|1|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:02:35|1|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:24.360Z","createdAt":"2016-08-04T10:00:16.207Z","__v":14,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:03:00|15|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:03:00|15|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:24.717Z","createdAt":"2016-08-04T10:00:16.207Z","__v":15,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"15","time":"08-03-2016 18:03:00","state":"Walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:04:00|2|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:04:00|2|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:25.050Z","createdAt":"2016-08-04T10:00:16.207Z","__v":16,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"15","time":"08-03-2016 18:03:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"2","time":"08-03-2016 18:04:00","state":"flashing"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349c
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123052327ca41527349c
+Return String:MN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:04:05|0|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349c
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123052327ca41527349cJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:04:05|0|null|null|null|pedestrian|legalcounts|57a3123052327ca41527349cAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123052327ca41527349c","updatedAt":"2016-08-04T10:00:25.370Z","createdAt":"2016-08-04T10:00:16.207Z","__v":17,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123052327ca41527349d","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"15","time":"08-03-2016 18:03:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"2","time":"08-03-2016 18:04:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Do not walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+ExcecutionNO3
+ExcecutionNO4
+ExcecutionNO5
+GivenD:\WC\Restassured\src\res\Automation_Run_Report.xlsx
+Given the Input sheet D:\WC\Restassured\src\res\Automation_Run_Report.xlsx
+ExcecutionYES2
+Return String:http://10.146.211.38:2020/api/v1/traffic/create/
+Return String:MN|Traffic Light Phase on Mass Ave
+Column Wisehttp://10.146.211.38:2020/api/v1/traffic/create/JSONPOSTdirection|descriptionMN|Traffic Light Phase on Mass AveAPIYes
+jsonAsMap{description=Traffic Light Phase on Mass Ave, direction=MN}
+Added the post request and the reponse is {"message":"Data added to the account!","data":{"__v":0,"updatedAt":"2016-08-04T10:00:25.776Z","createdAt":"2016-08-04T10:00:25.776Z","_id":"57a3123952327ca41527349e","trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]}}]}}
+SetValue2 true
+valuestrue
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:01:00|1|null|1|1|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:01:00|1|null|1|1|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:26.076Z","createdAt":"2016-08-04T10:00:25.776Z","__v":1,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:01:05|1|null|2|1|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:01:05|1|null|2|1|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:26.385Z","createdAt":"2016-08-04T10:00:25.776Z","__v":2,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:01:30|7|null|35|2|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:01:30|7|null|35|2|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:26.713Z","createdAt":"2016-08-04T10:00:25.776Z","__v":3,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:02:30|2|null|1|1|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:02:30|2|null|1|1|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:27.034Z","createdAt":"2016-08-04T10:00:25.776Z","__v":4,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:02:35|1|2|null|0|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:02:35|1|2|null|0|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:27.348Z","createdAt":"2016-08-04T10:00:25.776Z","__v":5,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:03:00|8|null|25|1|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Green|08-03-2016 18:03:00|8|null|25|1|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:27.660Z","createdAt":"2016-08-04T10:00:25.776Z","__v":6,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:04:00|0|null|1|2|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Yellow|08-03-2016 18:04:00|0|null|1|2|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:28.000Z","createdAt":"2016-08-04T10:00:25.776Z","__v":7,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:04:05|0|null|1|1|vehicle|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Red|08-03-2016 18:04:05|0|null|1|1|vehicle|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:28.337Z","createdAt":"2016-08-04T10:00:25.776Z","__v":8,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:00:00|10|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:00:00|10|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:28.665Z","createdAt":"2016-08-04T10:00:25.776Z","__v":9,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:01:00|1|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:01:00|1|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:29.008Z","createdAt":"2016-08-04T10:00:25.776Z","__v":10,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:01:05|0|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:01:05|0|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:29.313Z","createdAt":"2016-08-04T10:00:25.776Z","__v":11,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:01:30|13|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:01:30|13|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:29.644Z","createdAt":"2016-08-04T10:00:25.776Z","__v":12,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:02:30|1|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:02:30|1|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:29.941Z","createdAt":"2016-08-04T10:00:25.776Z","__v":13,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:02:35|1|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:02:35|1|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:30.265Z","createdAt":"2016-08-04T10:00:25.776Z","__v":14,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:03:00|15|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Walk|08-03-2016 18:03:00|15|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:30.567Z","createdAt":"2016-08-04T10:00:25.776Z","__v":15,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"15","time":"08-03-2016 18:03:00","state":"Walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:04:00|2|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|flashing|08-03-2016 18:04:00|2|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:30.866Z","createdAt":"2016-08-04T10:00:25.776Z","__v":16,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"15","time":"08-03-2016 18:03:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"2","time":"08-03-2016 18:04:00","state":"flashing"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:http://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349e
+Ref Testcase ID : TC01
+Output_Values Value  of TC01 is 57a3123952327ca41527349e
+Return String:MN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:04:05|0|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349e
+Column Wisehttp://10.146.211.38:2020/api/v1/edit/57a3123952327ca41527349eJSONPUTdirection|description|state|time|left|right|straight|uturn|type|action|area_idMN|Traffic Light Phase on Mass Ave|Do not walk|08-03-2016 18:04:05|0|null|null|null|pedestrian|legalcounts|57a3123952327ca41527349eAPIYes
+Device is updated sucessfully and reponse is {"message":"Device updated to the account!","data":{"_id":"57a3123952327ca41527349e","updatedAt":"2016-08-04T10:00:31.168Z","createdAt":"2016-08-04T10:00:25.776Z","__v":17,"trafficmoves":[{"Direction":"MN","Description":"Traffic Light Phase on Mass Ave","_id":"57a3123952327ca41527349f","pedestrian":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"null","straight":"null","right":"null","left":"10","time":"08-03-2016 18:00:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:01:05","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"13","time":"08-03-2016 18:01:30","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:30","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"1","time":"08-03-2016 18:02:35","state":"Do not walk"},{"uturn":"null","straight":"null","right":"null","left":"15","time":"08-03-2016 18:03:00","state":"Walk"},{"uturn":"null","straight":"null","right":"null","left":"2","time":"08-03-2016 18:04:00","state":"flashing"},{"uturn":"null","straight":"null","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Do not walk"}]},"bike":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[]},"vehicle":{"yield":[],"approachspeed":[],"illegalcounts":[],"legalcounts":[{"uturn":"1","straight":"1","right":"null","left":"1","time":"08-03-2016 18:01:00","state":"Yellow"},{"uturn":"1","straight":"2","right":"null","left":"1","time":"08-03-2016 18:01:05","state":"Red"},{"uturn":"2","straight":"35","right":"null","left":"7","time":"08-03-2016 18:01:30","state":"Green"},{"uturn":"1","straight":"1","right":"null","left":"2","time":"08-03-2016 18:02:30","state":"Yellow"},{"uturn":"0","straight":"null","right":"2","left":"1","time":"08-03-2016 18:02:35","state":"Red"},{"uturn":"1","straight":"25","right":"null","left":"8","time":"08-03-2016 18:03:00","state":"Green"},{"uturn":"2","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:00","state":"Yellow"},{"uturn":"1","straight":"1","right":"null","left":"0","time":"08-03-2016 18:04:05","state":"Red"}]}}]}}
+SetValue2 true
+ExcecutionNO3
+ExcecutionNO4
+ExcecutionNO5
+When
+When the execute the JSON
+Then
+Then Validate with expected result and store in excel
+
+
+executing
+Thu_Aug_04_15_30_31_IST_2016
+1.0 -- YES
+Test case name:MN
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC01.JSON>TC01</a>
+TC01
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC02.JSON>TC02</a>
+TC02
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC03.JSON>TC03</a>
+TC03
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC04.JSON>TC04</a>
+TC04
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC05.JSON>TC05</a>
+TC05
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC06.JSON>TC06</a>
+TC06
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC07.JSON>TC07</a>
+TC07
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC08.JSON>TC08</a>
+TC08
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC09.JSON>TC09</a>
+TC09
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC10.JSON>TC10</a>
+TC10
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC11.JSON>TC11</a>
+TC11
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC12.JSON>TC12</a>
+TC12
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC13.JSON>TC13</a>
+TC13
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC14.JSON>TC14</a>
+TC14
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC15.JSON>TC15</a>
+TC15
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC16.JSON>TC16</a>
+TC16
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC17.JSON>TC17</a>
+TC17
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC18.JSON>TC18</a>
+TC18
+1.0 -- NO
+Test case name:MS
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC01.JSON>TC01</a>
+TC01
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC02.JSON>TC02</a>
+TC02
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC03.JSON>TC03</a>
+TC03
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC04.JSON>TC04</a>
+TC04
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC05.JSON>TC05</a>
+TC05
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC06.JSON>TC06</a>
+TC06
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC07.JSON>TC07</a>
+TC07
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC08.JSON>TC08</a>
+TC08
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC09.JSON>TC09</a>
+TC09
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC10.JSON>TC10</a>
+TC10
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC11.JSON>TC11</a>
+TC11
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC12.JSON>TC12</a>
+TC12
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC13.JSON>TC13</a>
+TC13
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC14.JSON>TC14</a>
+TC14
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC15.JSON>TC15</a>
+TC15
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC16.JSON>TC16</a>
+TC16
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC17.JSON>TC17</a>
+TC17
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC18.JSON>TC18</a>
+TC18
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC19.JSON>TC19</a>
+TC19
+1.0 -- NO
+Test case name:BE
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC01.JSON>TC01</a>
+TC01
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC02.JSON>TC02</a>
+TC02
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC03.JSON>TC03</a>
+TC03
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC04.JSON>TC04</a>
+TC04
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC05.JSON>TC05</a>
+TC05
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC06.JSON>TC06</a>
+TC06
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC07.JSON>TC07</a>
+TC07
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC08.JSON>TC08</a>
+TC08
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC09.JSON>TC09</a>
+TC09
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC10.JSON>TC10</a>
+TC10
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC11.JSON>TC11</a>
+TC11
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC12.JSON>TC12</a>
+TC12
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC13.JSON>TC13</a>
+TC13
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC14.JSON>TC14</a>
+TC14
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC15.JSON>TC15</a>
+TC15
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC16.JSON>TC16</a>
+TC16
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC17.JSON>TC17</a>
+TC17
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC18.JSON>TC18</a>
+TC18
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC19.JSON>TC19</a>
+TC19
+1.0 -- NO
+Test case name:BW
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC01.JSON>TC01</a>
+TC01
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC02.JSON>TC02</a>
+TC02
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC03.JSON>TC03</a>
+TC03
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC04.JSON>TC04</a>
+TC04
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC05.JSON>TC05</a>
+TC05
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC06.JSON>TC06</a>
+TC06
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC07.JSON>TC07</a>
+TC07
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC08.JSON>TC08</a>
+TC08
+actual link-><a href=file:/D:/Users/raghuraman-k/workspace/Restassured_Gradle-master/src/res/Response/TC09.JSON>TC09</a>
+TC09
+totalTestSuites5Automation of CropsnapNO
+Generating reports view to 'D:\Users\raghuraman-k\workspace\Restassured_Gradle-master\target\jbehave' using formats '[stats, console, txt]' and view properties '{defaultFormats=stats, decorateNonHtml=true, viewDirectory=view, decorated=ftl/jbehave-report-decorated.ftl, reports=ftl/jbehave-reports-with-totals.ftl, maps=ftl/jbehave-maps.ftl, navigator=ftl/jbehave-navigator.ftl, views=ftl/jbehave-views.ftl, nonDecorated=ftl/jbehave-report-non-decorated.ftl}'
+Reports view generated with 1 stories containing 1 scenarios (of which  0 failed)
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.BasicClientConnectionManager).
+log4j:WARN Please initialize the log4j system properly.
+]]></system-err>
+</testsuite>

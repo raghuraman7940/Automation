@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Restassured.Restassured.MultipleStory" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-20T07:40:12" hostname="DS-448A5BBF25A0" time="0.55">
+  <properties/>
+  <testcase name="run" classname="Restassured.Restassured.MultipleStory" time="0.55"/>
+  <system-out><![CDATA[Processing system properties {}
+Running story Restassured/Restassured/stack_story.story
+Sample story
+(Restassured/Restassured/stack_story.story)
+Scenario: JSON status field valation
+Given the Input sheet D:\WC\Restassured\src\res\Automation_Run_Report.xlsx (PENDING)
+When the execute the JSON (PENDING)
+Then Validate with expected result and store in excel (PENDING)
+
+
+Generating reports view to 'D:\Users\raghuraman-k\workspace\Restassured_Gradle-master\target\jbehave' using formats '[stats, console, txt]' and view properties '{defaultFormats=stats, decorateNonHtml=true, viewDirectory=view, decorated=ftl/jbehave-report-decorated.ftl, reports=ftl/jbehave-reports-with-totals.ftl, maps=ftl/jbehave-maps.ftl, navigator=ftl/jbehave-navigator.ftl, views=ftl/jbehave-views.ftl, nonDecorated=ftl/jbehave-report-non-decorated.ftl}'
+Reports view generated with 1 stories containing 1 scenarios (of which  0 failed)
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (freemarker.cache).
+log4j:WARN Please initialize the log4j system properly.
+]]></system-err>
+</testsuite>

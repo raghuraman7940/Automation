@@ -1,0 +1,66 @@
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+//mainClassName = "com.restassured.jira.DriverScript.Main"
+
+// In this section you declare where to find the dependencies of your project
+    // Use 'jcenter' for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+  
+	
+    repositories {
+        mavenCentral()
+      
+    }
+
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // The production code uses the SLF4J logging API at compile time
+        
+
+    // Declare the dependency for your favourite test framework you want to use in your tests.
+    // TestNG is also supported by the Gradle Test task. Just change the
+    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
+    // 'test.useTestNG()' to your build script.  
+    //JSF
+    compile group: 'com.sun.faces', name: 'jsf-api', version: '2.1.22'
+    compile group: 'com.sun.faces', name: 'jsf-impl', version: '2.1.22'   
+    compile group: 'junit', name: 'junit', version: '3.8.1'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '2.53.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.53.0'
+	compile group: 'org.jbehave', name: 'jbehave-core', version: '4.0.5'
+    
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.3'
+    compile group: 'org.json', name: 'json', version: '20160212'
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.8-beta4'
+	compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.1'    
+    //compile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all
+		compile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    
+	compile group: 'org.apache.poi', name: 'poi', version: '3.14'
+    // https://mvnrepository.com/artifact/com.github.fge/json-schema-validator
+compile group: 'com.github.fge', name: 'json-schema-validator', version: '2.2.6'
+    
+    // https://mvnrepository.com/artifact/com.github.fge/jackson-coreutils
+compile group: 'com.github.fge', name: 'jackson-coreutils', version: '1.8'
+    
+    
+    compile group: 'org.apache.poi', name: 'poi', version: '3.15-beta1'
+    //compile group: 'com.jayway.restassured', name: 'rest-assured', version: '1.6'
+    
+    compile group: 'poi', name: 'poi', version: '3.1-FINAL'
+    compile group: 'poi', name: 'poi', version: '3.1-beta2'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.14'
+    compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.14'
+	
+    testCompile 'junit:junit:4.12' 
+
+    //testCompile 'com.googlecode.jmockit:jmockit:1.2'
+    testCompile 'com.h2database:h2:1.3.172'	
+   
+}
