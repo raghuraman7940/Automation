@@ -11,6 +11,9 @@ apply plugin: 'eclipse'
 	
     repositories {
         mavenCentral()
+         maven {
+    url "https://repox.sonarsource.com/sonarsource"
+  }
       
     }
 
@@ -57,6 +60,10 @@ compile group: 'com.github.fge', name: 'jackson-coreutils', version: '1.8'
     compile group: 'poi', name: 'poi', version: '3.1-beta2'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.14'
     compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.14'
+	// https://mvnrepository.com/artifact/org.zaproxy/zap-clientapi
+compile group: 'org.zaproxy', name: 'zap-clientapi', version: '1.6.0'
+	// https://mvnrepository.com/artifact/org.zaproxy/zap
+compile group: 'org.zaproxy', name: 'zap', version: '2.7.0'
 	
     testCompile 'junit:junit:4.12' 
 

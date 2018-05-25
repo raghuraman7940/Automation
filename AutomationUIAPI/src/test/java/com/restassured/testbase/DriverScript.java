@@ -114,7 +114,7 @@ public class DriverScript {
         
         
         //Set Input file name
-        XlsxSuiteFile ="D:\\MIG_BACKUP\\MyWorkSpace\\workspace\\Automation_API\\"+APIConstants.SRC_RES_FILEPATH+"XLS\\"+APIConstants.SUITE_XLFILE;
+        XlsxSuiteFile =System.getProperty("user.dir")+APIConstants.SRC_RES_FILEPATH+"XLS\\"+APIConstants.SUITE_XLFILE;
         XlsxSuite_xls=new Xls_Reader(XlsxSuiteFile);
  	 	int TEST_CASES_rows= XlsxSuite_xls.getRowCount(APIConstants.TEST_SUITE_SHEET);     	 	
 		for(int rowNum1=2;rowNum1<=TEST_CASES_rows;rowNum1++)
