@@ -25,7 +25,10 @@ public class testfire {
  //OpenZAP();
  //OpenZAP2();
  //OpenZAP3();
- OpenZAP3_2();
+ //OpenZAP3_2();
+	boolean reult=   CheckIfZAPHasStartedOrNot(ZAP_ADDRESS, ZAP_PORT);
+	System.out.println("reult: "+reult);
+	
  //OpenZAP4();
  
  }
@@ -98,15 +101,17 @@ public class testfire {
  System.out.println("Slept for 50 s");
  }
  
- private static void CheckIfZAPHasStartedOrNot() throws IOException, InterruptedException {
- String zapApiUrl = "http://localhost:7070";
+ private static boolean CheckIfZAPHasStartedOrNot(String ZAP_ADDRESS, int ZAP_PORT) throws IOException, InterruptedException {
+ String zapApiUrl = "http://"+ZAP_ADDRESS+":"+ZAP_PORT;
+ System.out.println("zapApiUrl :"+zapApiUrl);
  URL url = new URL(zapApiUrl);
  HttpURLConnection connection = (HttpURLConnection)url.openConnection();
  connection.setRequestMethod("GET");
  int numberOfRetries = 0;
+ boolean result=false;
 
 
- while (numberOfRetries <= 30) {
+ while (numberOfRetries <= 2) {
  try {
  BufferedReader in = new BufferedReader(new InputStreamReader(
  connection.getInputStream()));
@@ -121,11 +126,11 @@ public class testfire {
  System.out.println(response.toString());
  
  System.out.println("Response received from the API endpoint. ZAP should be up by now");
+ result=true;
  break;
  } catch (ConnectException e) {
- System.out
- .println("No response received from the API endpoint. Seems like ZAP has not started yet, let's keep polling");
- if(numberOfRetries >= 30)
+ System.out.println("No response received from the API endpoint. Seems like ZAP has not started yet, let's keep polling");
+ if(numberOfRetries >= 2)
  {
  System.out.println("Tried " + numberOfRetries + " of times, couldn't get a response from the ZAP API endpoint");
  }
@@ -135,5 +140,7 @@ public class testfire {
  Thread.sleep(5000);
  }
  }
+ return result;
  }
+ 
 }

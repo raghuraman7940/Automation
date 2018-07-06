@@ -13,8 +13,8 @@ public class VulnerableTest {
 	static final String ZAP_API_KEY ="fn4ism7pac59tdfac434mvmpao"; // Change this if you have set the apikey in ZAP via Options / API
 
 	static final String ZAP_URI = "http://localhost";
-	static final String ZAP_URI_PORT = "http://localhost:49794";
-	static final String SELENIUM_URI = "http://localhost:49794";
+	static final String ZAP_URI_PORT = "http://localhost:50496";
+	static final String SELENIUM_URI = "http://localhost:50496";
 	
 	public static void main(String[] args) throws InterruptedException {
 		ZapTools zap = new ZapTools();

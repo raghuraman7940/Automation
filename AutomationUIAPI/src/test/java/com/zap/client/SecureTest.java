@@ -13,8 +13,8 @@ public class SecureTest {
 
 	static final String ZAP_HOSTNAME = "localhost";
 	static final String ZAP_URI = "http://localhost";
-	static final String ZAP_URI_PORT = "http://localhost:49794";
-	static final String SELENIUM_URI = "http://localhost:49794";
+	static final String ZAP_URI_PORT = "http://localhost:50496";
+	static final String SELENIUM_URI = "http://localhost:50496";
 	
 	public static void main(String[] args) throws InterruptedException {
 		ZapTools zap = new ZapTools();
