@@ -19,15 +19,28 @@ public class testfire {
 
  public static void main(String[] args) throws Exception {
 
-	   api = new ClientApi(ZAP_ADDRESS, ZAP_PORT, ZAP_API_KEY);
+	 
+	 ZapTools zapa=new ZapTools();
+	//zapa.startZAP();
+		boolean reult=   CheckIfZAPHasStartedOrNot(ZAP_ADDRESS, ZAP_PORT);
+		System.out.println("reult: "+reult);
+//		
+ zapa.stopZAP(ZAP_ADDRESS, ZAP_PORT, ZAP_API_KEY);
+////	 
+//	 zapa.startSession(ZAP_ADDRESS, ZAP_PORT, ZAP_API_KEY);
+//	 Thread.sleep(9000);
+//	 
+	
+	   
+
 
 
  //OpenZAP();
- //OpenZAP2();
+//OpenZAP2();
  //OpenZAP3();
  //OpenZAP3_2();
-	boolean reult=   CheckIfZAPHasStartedOrNot(ZAP_ADDRESS, ZAP_PORT);
-	System.out.println("reult: "+reult);
+//api = new ClientApi(ZAP_ADDRESS, ZAP_PORT, ZAP_API_KEY);
+
 	
  //OpenZAP4();
  
@@ -49,10 +62,12 @@ public class testfire {
  String zapExecutableLocation = "C:\\Program Files\\OWASP\\Zed Attack Proxy\\ZAP.bat";
  String zapWorkingDirectory = "C:\\Program Files\\OWASP\\Zed Attack Proxy";
  String[] command = { "CMD", "/C", zapExecutableLocation };
+ 
+ System.out.println("Command :"+command);
  ProcessBuilder pb = new ProcessBuilder(command);
  pb.directory(new File(zapWorkingDirectory).getAbsoluteFile());
  Process p = pb.start();
- p.waitFor();
+ //p.waitFor();
  //CheckIfZAPHasStartedOrNot();
  System.out.println("Going to sleep for some time to simulate polling to see if ZAP has started");
  Thread.sleep(50000); 

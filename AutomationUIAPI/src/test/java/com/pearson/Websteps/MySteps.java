@@ -102,6 +102,7 @@ public class MySteps {
 			keywords.captureScreenshot("TC01_Login",Rsult);
 		}
 		Rep.ReportExcelData(TCID,TCName,"The login functionality with "+CurrentUserRole+" user",InputDetails,"Login should be successful",Rsult,ActualRes,"");
+		
 		}
 		
 	}
@@ -135,10 +136,73 @@ public class MySteps {
 		Rep.ReportExcelData(TCID,TCName,"Verify Persona Info functionality with "+CurrentUserRole+" user",InputDetails,"Profile details should match with expected",VerProfileRes,ActualRes,"");
 		
 	}
+	
+	@Given("user provide the user details into PA Next")
+	public void givenUserProvideTheUserDetailsIntoPANext(@Named("URL") String URL, @Named("Username") String Username, @Named("Password") String Password) throws NumberFormatException, InterruptedException {
+		 //TODO 
+		
+		pagelogin.doLogin2(URL, Username, Password);
+		InputDetails="The login details are <\br> Username :"+Username+"\n <\br>Pasword: "+Password;
+	}
+	
+	@When("user selects the Login button")
+	public void whenUserSelectsTheLoginButton(){
+		 //TODO 
+	}
+	@Then("verify the login should be successfully")
+	public void thenVerifyTheLoginShouldBeSuccessfully() throws IOException{
+		 //TODO 
+		
+		 //TODO 
+		iTCGenNo=iTCGenNo+1;
+		String ActualRes;
+		String TCID=sTCNoTemplate+iTCGenNo;
+		String TCName="Login -"+CurrentUserRole;
+		String warning=pagelogin.VerifyWarning();
+		if (warning=="FAIL")
+		{
+			APP_LOGS.debug("Login Failed with warning");
+			keywords.captureScreenshot("TC01_Login",warning);
+			ActualRes="User login failed with warning : "+warning;
+			Rep.ReportExcelData(TCID,TCName,"The login functionality with "+CurrentUserRole+" user",InputDetails,"Login should be successful","FAIL",ActualRes,"");
+		}
+		else
+		{
+		String Rsult=pageloggedIn.VerifyLoggedIn1();
+		if (Rsult=="PASS")
+		{
+			ActualRes="User logged in Successfull";
+	
+		}
+		else
+		{
+			ActualRes="User login failed";
+			keywords.captureScreenshot("TC01_Login",Rsult);
+		}
+		Rep.ReportExcelData(TCID,TCName,"The login functionality with "+CurrentUserRole+" user",InputDetails,"Login should be successful",Rsult,ActualRes,"");
+		
+		}
+		
+	}
+	
+	
+	@Given("user select create and provide the student details")
+	public void givenUserSelectCreateAndProvideTheStudentDetails(){
+		 //TODO 
+	}
+	@When("user select the save button")
+	public void whenUserSelectTheSaveButton(){
+		 //TODO 
+	}
+	@Then("verify the student details")
+	public void thenVerifyTheStudentDetails(){
+		 //TODO 
+	}
 		
 	@AfterStory(uponGivenStory=false)
 	public void afterGivenStory() throws NumberFormatException, InterruptedException {
 		keywords.click("btnLogout", "data ");
+		pageloggedIn.VerifyLoggedOut();
 		keywords.pause("2", "2");
 		keywords.closeBroswer("Browser", "Quit");
 	}

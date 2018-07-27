@@ -831,12 +831,91 @@ public class Keywords {
         }
         return driver.findElement(by);
     }
-
 	
+
+
 	public List<WebElement> ChooseElements(String byStrgylocValue) {
         By by = null;
 //       System.out.println(byStrgylocValue);
 //        
+        if (byStrgylocValue.contains("|"))
+        {
+	        String temp[]=byStrgylocValue.split(UIConstants.DATA_SPLIT);
+	        String byStrategy=temp[0];
+//	        System.out.println(temp[0]);
+//	        System.out.println(temp[1]);
+	        String locatorValue=temp[1];
+	        switch (byStrategy) {
+	        case "ID":
+	            by = By.id(locatorValue);
+	            break;
+	        case "NAME":
+	            by = By.name(locatorValue);
+	            break;
+	        case "CLASS":
+	            by = By.className(locatorValue);
+	            break;
+	        case "LINKTEXT":
+	            by = By.linkText(locatorValue);
+	            break;
+	        case "XPATH":
+	            by = By.xpath(locatorValue);
+	            break;
+	        case "CSS":
+	            by = By.cssSelector(locatorValue);
+	            break;
+	        case "TAGNAME":
+	            by = By.tagName(locatorValue);
+	            break;
+        }
+        }
+        return driver.findElements(by);
+    }
+	
+	public WebElement BrowserElement(WebElement oElement,String StrElem) {
+        By by = null;
+        //System.out.println(byStrgylocValue);
+        
+        String byStrgylocValue=OR.getProperty(StrElem);
+        if (byStrgylocValue.contains("|"))
+        {
+        	
+	        String temp[]=byStrgylocValue.split(UIConstants.DATA_SPLIT);
+	        String byStrategy=temp[0];
+	        String locatorValue=temp[1];
+	        switch (byStrategy) {
+		        case "ID":
+		            by = By.id(locatorValue);
+		            break;
+		        case "NAME":
+		            by = By.name(locatorValue);
+		            break;
+		        case "CLASS":
+		            by = By.className(locatorValue);
+		            break;
+		        case "LINKTEXT":
+		            by = By.linkText(locatorValue);
+		            break;
+		        case "XPATH":
+		            by = By.xpath(locatorValue);
+		            break;
+		        case "CSS":
+		            by = By.cssSelector(locatorValue);
+		            break;
+		        case "TAGNAME":
+		            by = By.tagName(locatorValue);
+		            break;
+	        }
+        }
+        return oElement.findElement(by);
+    }
+
+	
+	
+	public List<WebElement> BrowserElements(WebElement oElement,String StrElem) {
+        By by = null;
+//       System.out.println(byStrgylocValue);
+        String byStrgylocValue=OR.getProperty(StrElem);
         if (byStrgylocValue.contains("|"))
         {
 	        String temp[]=byStrgylocValue.split(UIConstants.DATA_SPLIT);
@@ -1813,4 +1892,49 @@ public String VerifyDivElementFromValue(String ListDivObj, String VerifyValue)
 	        driver.findElement(By.xpath(OR.getProperty(object))).click();
 			return UIConstants.KEYWORD_PASS;
 		}
+		
+		
+public String kendo_multiselect(String K_MultiObject, String VerifyValue) 
+{
+ 	 APP_LOGS.debug("kendo_multiselect : "+K_MultiObject);
+ 	 try
+ 	 {
+ 		  //To locate Multiselect Object.
+	  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+	  
+	  switch(VerifyValue.toLowerCase())
+	  {
+	  case "input":
+		  BrowserElement(K_MultiSel_ELM,"Ken_MS_Input").click();
+		  return UIConstants.KEYWORD_PASS;
+	  case "inputclear":
+		  BrowserElement(K_MultiSel_ELM,"Ken_MS_Clear").click();
+		  return UIConstants.KEYWORD_PASS;
+	  case "lst":
+		  System.out.println("Enter into lst selection text:  ");
+   			Select Selectby=new Select(ListPrDivElmt2.get(Secrow));			   			
+   			Selectby.selectByVisibleText(Setvalue);
+   			return UIConstants.KEYWORD_PASS;
+	  case "Selected":
+		  
+		  List<WebElement> K_MS_Sellst = BrowserElements(K_MultiSel_ELM,"Ken_MS_Selectedlst");
+		  for (WebElement K_MS_SelValues: K_MS_Sellst)
+		  {
+			  String Selectedvalue= BrowserElement(K_MS_SelValues,"Ken_MS_SelectedText").getText();
+			  System.out.println("Selectedvalue: "+Selectedvalue);
+		  }
+		  
+		  ListPrDivElmt2.get(Secrow).click();
+		  return UIConstants.KEYWORD_PASS;
+	  }
+	  
+	 
+	  
+  		System.out.println("Matched cell Value Of row number "+RetnResult);
+		 }
+		  catch(Exception e){
+			  return RetnResult;
+		  	}
+  		return UIConstants.KEYWORD_FAIL;
+ }
 }

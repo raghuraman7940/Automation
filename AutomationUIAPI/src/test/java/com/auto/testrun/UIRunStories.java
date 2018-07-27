@@ -17,6 +17,7 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import com.pearson.Websteps.UICommonSteps;
 import com.pearson.Websteps.MySteps;
 
+
 public class UIRunStories extends JUnitStories {
 
 	 public UIRunStories() {
@@ -59,7 +60,7 @@ public class UIRunStories extends JUnitStories {
 	 @Override
 		protected List<String> storyPaths() {
 			return new StoryFinder().findPaths(CodeLocations.codeLocationFromPath("src/test/resources"), 
-					"**/UIStory*.story",
+					"**/PearsonNext*.story",
 					"**/API*.story");
 		}
 	    

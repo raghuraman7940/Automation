@@ -24,6 +24,29 @@ public class LoginPage {
 			return UIConstants.KEYWORD_FAIL+" -- Not able to Login";
 		}
 	}
+	
+	//public Keywords keywords = new Keywords();
+	public String doLogin2(String URL, String UserName, String Password) throws NumberFormatException, InterruptedException {
+		// TODO Auto-generated method stub
+		try
+		{
+			keywords.navigate("Test",URL);
+			keywords.pause("2", "2");
+			keywords.waitForElementVisibility("lnkSignIn", CONFIG.getProperty("implicitwait"));
+			keywords.click("lnkSignIn", " ");
+			keywords.pause("2", "2");
+			keywords.waitForElementVisibility(UserName, CONFIG.getProperty("implicitwait"));
+			keywords.writeInInput("txtUserName", UserName);
+			keywords.writeInInput("txtPassword", Password);
+			keywords.pause("2", "2");
+			keywords.click("btnLogin1", " ");
+			keywords.pause("5", "5");
+		return UIConstants.KEYWORD_PASS;
+		}
+		catch(Exception e){
+			return UIConstants.KEYWORD_FAIL+" -- Not able to Login";
+		}
+	}
 
 	public String VerifyWarning() {
 		// TODO Auto-generated method stub
