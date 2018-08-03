@@ -1,0 +1,11 @@
+14/03/2014 18:46:43 devpinoyLogger Hello
+14/03/2014 18:46:43 devpinoyLogger Properties loaded. Starting testing
+14/03/2014 18:46:43 devpinoyLogger Intialize Suite xlsx
+14/03/2014 18:46:44 devpinoyLogger MYICLC_Login -- N
+14/03/2014 18:46:44 devpinoyLogger EPL_Login -- Y
+14/03/2014 18:46:44 devpinoyLogger ******Executing the Suite******EPL_Login
+14/03/2014 18:46:44 devpinoyLogger EPL_Login -- Y
+14/03/2014 18:46:44 devpinoyLogger Executing the test case -> EPL_Login
+14/03/2014 18:46:44 devpinoyLogger Iteration number 1
+14/03/2014 18:46:44 devpinoyLogger openBrowser
+14/03/2014 18:46:44 devpinoyLogger Opening browser

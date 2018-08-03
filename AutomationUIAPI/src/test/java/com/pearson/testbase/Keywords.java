@@ -1,6 +1,7 @@
 package com.pearson.testbase;
 
 
+import static com.pearson.Websteps.MySteps.keywords;
 import static com.pearson.Websteps.UICommonSteps.APP_LOGS;
 import static com.pearson.Websteps.UICommonSteps.CONFIG;
 import static com.pearson.Websteps.UICommonSteps.OR;
@@ -18,6 +19,7 @@ import java.awt.event.KeyEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
@@ -836,6 +838,86 @@ public class Keywords {
         return driver.findElements(by);
     }
 	
+	
+
+	public WebElement BrowserElement(WebElement oElement,String StrElem) {
+        By by = null;
+        //System.out.println(byStrgylocValue);
+        
+        String byStrgylocValue=OR.getProperty(StrElem);
+        if (byStrgylocValue.contains("|"))
+        {
+        	
+	        String temp[]=byStrgylocValue.split(UIConstants.DATA_SPLIT);
+	        String byStrategy=temp[0];
+	        String locatorValue=temp[1];
+	        switch (byStrategy) {
+		        case "ID":
+		            by = By.id(locatorValue);
+		            break;
+		        case "NAME":
+		            by = By.name(locatorValue);
+		            break;
+		        case "CLASS":
+		            by = By.className(locatorValue);
+		            break;
+		        case "LINKTEXT":
+		            by = By.linkText(locatorValue);
+		            break;
+		        case "XPATH":
+		            by = By.xpath(locatorValue);
+		            break;
+		        case "CSS":
+		            by = By.cssSelector(locatorValue);
+		            break;
+		        case "TAGNAME":
+		            by = By.tagName(locatorValue);
+		            break;
+	        }
+        }
+        return oElement.findElement(by);
+    }
+
+	
+	
+	public List<WebElement> BrowserElements(WebElement oElement,String StrElem) {
+        By by = null;
+//       System.out.println(byStrgylocValue);
+        String byStrgylocValue=OR.getProperty(StrElem);
+        if (byStrgylocValue.contains("|"))
+        {
+	        String temp[]=byStrgylocValue.split(UIConstants.DATA_SPLIT);
+	        String byStrategy=temp[0];
+//	        System.out.println(temp[0]);
+//	        System.out.println(temp[1]);
+	        String locatorValue=temp[1];
+	        switch (byStrategy) {
+	        case "ID":
+	            by = By.id(locatorValue);
+	            break;
+	        case "NAME":
+	            by = By.name(locatorValue);
+	            break;
+	        case "CLASS":
+	            by = By.className(locatorValue);
+	            break;
+	        case "LINKTEXT":
+	            by = By.linkText(locatorValue);
+	            break;
+	        case "XPATH":
+	            by = By.xpath(locatorValue);
+	            break;
+	        case "CSS":
+	            by = By.cssSelector(locatorValue);
+	            break;
+	        case "TAGNAME":
+	            by = By.tagName(locatorValue);
+	            break;
+        }
+        }
+        return driver.findElements(by);
+    }
+	
 	public  String verifyTextinInput(String object,String data){
        APP_LOGS.debug("Verifying the text in input box :"+object);
        try{
@@ -932,6 +1014,21 @@ public class Keywords {
 	return UIConstants.KEYWORD_PASS;
 	}
 	
+	
+	public String Elementexist(String object,String data){
+	       APP_LOGS.debug("Checking existance of element"+object);
+	       try{
+	    	   if(ChooseElements(OR.getProperty(object)).size() > 0){
+	    		   return UIConstants.KEYWORD_PASS;
+				}
+
+			   }catch(Exception e){
+					return UIConstants.KEYWORD_FAIL+" Object doest not exist";
+			  }
+	       
+	       
+			return UIConstants.KEYWORD_PASS;
+	}
 	
 	 public String VerifyWebtable(String object,Hashtable<String, String> hdata) {
 		 
@@ -1657,15 +1754,11 @@ public String VerifyDivElementFromValue(String ListDivObj, String VerifyValue)
 		int start=0;
 		int time=(int)Double.parseDouble(data);
 		try{
-		 while(time == start){
-			 System.out.println("Start"+start);
-			 System.out.println("time "+time);
-			if(driver.findElements(By.xpath(OR.getProperty(object))).size() == 0){
-				 System.out.println("Passed "+start+time);
-				Thread.sleep(1000L);
+		 while(time != start){
+			if(ChooseElements(OR.getProperty(object)).size() == 0){
+				Thread.sleep(1000);
 				start++;
 			}else{
-				 System.out.println("Failed "+start+time);
 				break;
 			}
 		 }
@@ -1778,4 +1871,389 @@ public String VerifyDivElementFromValue(String ListDivObj, String VerifyValue)
 	        driver.findElement(By.xpath(OR.getProperty(object))).click();
 			return UIConstants.KEYWORD_PASS;
 		}
+		
+		
+		public String kendo_multiselect(String K_MultiObject, String VerifyValue,List<String> multidata) 
+		{
+		 	 APP_LOGS.debug("kendo_multiselect : "+K_MultiObject);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+			  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+			  
+			  switch(VerifyValue.toLowerCase())
+			  {
+			  case "input":
+				  BrowserElement(K_MultiSel_ELM,"Ken_MS_Input").click();
+				  return UIConstants.KEYWORD_PASS;
+			  case "inputclear":
+				  BrowserElement(K_MultiSel_ELM,"Ken_MS_Clear").click();
+				  return UIConstants.KEYWORD_PASS;
+			  case "lst":
+				  //Get already selected values -not to select
+				  List<String> ExistSelected= new ArrayList<>();
+				  List<WebElement> K_MS_ExtSelst = BrowserElements(K_MultiSel_ELM,"Ken_MS_Selectedlst");
+				  for (WebElement K_MS_SelValues: K_MS_ExtSelst){
+					  String Selectedvalue=K_MS_SelValues.getText();
+					  ExistSelected.add(Selectedvalue);
+				  }
+				  //Select multi value
+				  for (String data: multidata){
+					  //Check not the data is already selected
+					  if (!ExistSelected.contains(data)) {
+						  BrowserElement(K_MultiSel_ELM,"Ken_MS_Input").click();
+						  this.pause("1","1");
+						  List<String> drpvalue= new ArrayList<>(); 
+						  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("Ken_MS_Dropdownlst"));
+						  for (WebElement K_MS_Value: K_MS_Lst){ 
+							  String FELstvalue=K_MS_Value.getText();
+							  if (FELstvalue.contains(data)){
+								  K_MS_Value.click();
+								  break;
+							  }
+							  drpvalue.add(FELstvalue);
+						  }
+						  System.out.println("drpvalue: "+drpvalue);
+					  }
+				  }
+			
+				 
+		   			return UIConstants.KEYWORD_PASS;
+			  case "selected":
+				  
+				  //Verify selected values
+				  for (String data: multidata){
+					  List<WebElement> K_MS_Sellst = BrowserElements(K_MultiSel_ELM,"Ken_MS_Selectedlst");
+					  for (WebElement K_MS_SelValues: K_MS_Sellst)
+					  {
+						  String Selectedvalue=K_MS_SelValues.getText();
+						  System.out.println("Selectedvalue: "+Selectedvalue);
+						  
+					  }
+				  	}
+				  return UIConstants.KEYWORD_PASS;
+			  }
+			  
+			 
+			  
+		  		System.out.println("Matched cell Value Of row number "+RetnResult);
+				 }
+				  catch(Exception e){
+					  return RetnResult;
+				  	}
+		  		return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		
+		public String Ken_MultiSelect_SelectValue(String K_MultiObject, List<String> multidata) 
+		{
+		 	 APP_LOGS.debug("kendo_multiselect_SelectValue : "+K_MultiObject);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+				  //Get already selected values -not to select
+				  List<String> ExistSelected= Ken_MultiSelect_GetSelected(K_MultiObject);
+				  
+				  //Select multi value
+				  for (String data: multidata){
+					  //Check not the data is already selected
+					  if (!ExistSelected.contains(data)) {
+						  BrowserElement(K_MultiSel_ELM,"Ken_MS_Input").click();
+						  this.pause("1","1");
+						  List<String> drpvalue= new ArrayList<>(); 
+						  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("Ken_MS_Dropdownlst"));
+						  for (WebElement K_MS_Value: K_MS_Lst){ 
+							  String FELstvalue=K_MS_Value.getText();
+							  if (FELstvalue.contains(data)){
+								  K_MS_Value.click();
+								  break;
+							  }
+							  drpvalue.add(FELstvalue);
+						  }
+						  System.out.println("drpvalue: "+drpvalue);
+					  }
+				  }
+		   		return UIConstants.KEYWORD_PASS;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		public String Ken_MultiSelect_SelectValue(String K_MultiObject, String data) 
+		{
+		 	 APP_LOGS.debug("kendo_multiselect : "+K_MultiObject);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+				  //Get already selected values -not to select
+				  List<String> ExistSelected= Ken_MultiSelect_GetSelected(K_MultiObject);
+				  
+					  //Check not the data is already selected
+					  if (!ExistSelected.contains(data)) {
+						  BrowserElement(K_MultiSel_ELM,"Ken_MS_Input").click();
+						  this.pause("1","1");
+						  List<String> drpvalue= new ArrayList<>(); 
+						  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("Ken_MS_Dropdownlst"));
+						  for (WebElement K_MS_Value: K_MS_Lst){ 
+							  String FELstvalue=K_MS_Value.getText();
+							  if (FELstvalue.contains(data)){
+								  K_MS_Value.click();
+								  break;
+							  }
+							  drpvalue.add(FELstvalue);
+						  }
+						  System.out.println("drpvalue: "+drpvalue);
+					  }
+				  
+		   		return UIConstants.KEYWORD_PASS;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		public String Ken_MultiSelect_SelectValue(String K_MultiObject, int index) 
+		{
+		 	 APP_LOGS.debug("kendo_multiselect : "+K_MultiObject);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+			
+				  //Select input arrow to get dropdownlist
+				  BrowserElement(K_MultiSel_ELM,"Ken_MS_Input").click();
+				  this.pause("1","1");
+				  List<String> drpvalue= new ArrayList<>(); 
+				  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("Ken_MS_Dropdownlst"));
+				  int FEIndex=1;
+				  for (WebElement K_MS_Value: K_MS_Lst){ 
+					  String FELstvalue=K_MS_Value.getText();
+					  if (FEIndex==index){
+						  K_MS_Value.click();
+						  RetnResult=FELstvalue;
+						  K_MultiSel_ELM.click();
+						  this.pause("1","1");
+						  break;
+					  }
+					  FEIndex=FEIndex=1;
+					  drpvalue.add(FELstvalue);
+				  }
+				  System.out.println("drpvalue: "+drpvalue);
+			  
+				  
+		   		return RetnResult;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		
+		
+		public String Ken_MultiSelect_VerifySelected(String K_MultiObject, List<String> multidata) 
+		{
+		 	 APP_LOGS.debug("kendo_multiselect_SelectValue : "+K_MultiObject);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+				  //Get already selected values 
+				  List<String> ExistSelected= Ken_MultiSelect_GetSelected(K_MultiObject);
+				  //Select multi value
+				  for (String data: multidata){
+					  //Check not the data is already selected
+					  if (ExistSelected.contains(data)) {
+						  RetnResult= UIConstants.KEYWORD_PASS;
+					  }
+				  
+					  else
+					  {
+						  return UIConstants.KEYWORD_FAIL+" Data: "+data;
+					  }
+				  }
+		   		return RetnResult;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		
+
+		public List<String> Ken_MultiSelect_GetSelected(String K_MultiObject) 
+		{
+		 	 APP_LOGS.debug("kendo_multiselect_GetSelectedValue : ");
+		 	 List<String> ExistSelected= new ArrayList<>();
+		 	 try
+		 	 {
+		 		//To locate Multiselect Object.
+				  WebElement K_MultiSel_ELM = ChooseElement(OR.getProperty(K_MultiObject));
+				  //Get already selected values -not to select
+				  List<WebElement> K_MS_ExtSelst = BrowserElements(K_MultiSel_ELM,"Ken_MS_Selectedlst");
+				  for (WebElement K_MS_SelValues: K_MS_ExtSelst){
+					  String Selectedvalue=K_MS_SelValues.getText();
+					  ExistSelected.add(Selectedvalue);
+				  }
+		   		return ExistSelected;
+			}
+			catch(Exception e){
+			  return ExistSelected;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+
+		public String Ken_DropDown_SelectValue(String K_DD_Object, String data) 
+		{
+		 	 APP_LOGS.debug("Ken_DropDown_SelectValue : "+K_DD_Object);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_DD_ELM = ChooseElement(OR.getProperty(K_DD_Object));
+				  //Get already selected values -not to select
+				  String ExistSelected= Ken_DropDown_GetSelected(K_DD_Object);
+				  
+					  //Check not the data is already selected
+					  if (!ExistSelected.contains(data)) {
+						  
+						  K_DD_ELM.click();			  
+//						  WebElement K_DD_Arrow = BrowserElement(K_DD_ELM,"lstKendropdown_Arrow");
+//						  K_DD_Arrow.click();
+//						  this.pause("1","1");
+						 waitForElementVisibility("lstKendropdown_lst", CONFIG.getProperty("implicitwait"));
+						  List<String> drpvalue= new ArrayList<>(); 
+						  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("lstKendropdown_lst"));
+						  for (WebElement K_MS_Value: K_MS_Lst){ 
+							  String FELstvalue=K_MS_Value.getText();
+							  if (FELstvalue.contains(data)){
+								  K_MS_Value.click();
+								  break;
+							  }
+							  drpvalue.add(FELstvalue);
+						  }
+						 // System.out.println("lstdrpdwnvalues: "+drpvalue);
+					  }
+				  
+		   		return UIConstants.KEYWORD_PASS;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+
+		public String Ken_DropDown_SelectValue(String K_DD_Object, String data,String AutoPopData) 
+		{
+		 	 APP_LOGS.debug("Ken_DropDown_SelectValue : "+K_DD_Object);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_DD_ELM = ChooseElement(OR.getProperty(K_DD_Object));
+				  //Get already selected values -not to select
+				  String ExistSelected= Ken_DropDown_GetSelected(K_DD_Object);
+				  
+					  //Check not the data is already selected
+					  if (!ExistSelected.contains(data)) {
+						  //BrowserElement(K_DD_ELM,"lstKendropdown_Arrow").click();
+						  K_DD_ELM.click();
+						 waitForElementVisibility("lstKendropdown_lst", CONFIG.getProperty("implicitwait"));
+						  
+						  ChooseElement(OR.getProperty("lstKendropdown_Input")).sendKeys(data);
+						  this.pause("1","1");
+						  List<String> drpvalue= new ArrayList<>(); 
+						  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("lstKendropdown_lst"));
+						  for (WebElement K_MS_Value: K_MS_Lst){ 
+							  String FELstvalue=K_MS_Value.getText();
+							  if (FELstvalue.contains(data)){
+								  K_MS_Value.click();
+								  break;
+							  }
+							  drpvalue.add(FELstvalue);
+						  }
+						  System.out.println("lstdrpdwnvalues: "+drpvalue);
+					  }
+				  
+		   		return UIConstants.KEYWORD_PASS;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		public String Ken_DropDown_SelectValue(String K_DD_Object, int index) 
+		{
+		 	 APP_LOGS.debug("Ken_DropDown_SelectValue : "+K_DD_Object);
+		 	 String RetnResult="";
+		 	 try
+		 	 {
+		 		  //To locate Multiselect Object.
+				  WebElement K_DrpDwm_ELM = ChooseElement(OR.getProperty(K_DD_Object));
+			
+				  //Select input arrow to get dropdownlist
+//				  BrowserElement(K_DrpDwm_ELM,"lstKendropdown_Arrow").click();
+//				  this.pause("1","1");
+//				  
+				  K_DrpDwm_ELM.click();
+				  waitForElementVisibility("lstKendropdown_lst", CONFIG.getProperty("implicitwait"));
+				  List<WebElement> K_MS_Lst = ChooseElements(OR.getProperty("lstKendropdown_lst"));
+				  int FEIndex=1;
+				  for (WebElement K_MS_Value: K_MS_Lst){ 
+					  String FELstvalue=K_MS_Value.getText();
+					  if (FEIndex==index){
+						  K_MS_Value.click();
+						  RetnResult=FELstvalue;
+						  break;
+					  }
+					  FEIndex=FEIndex=1;
+					 
+				  }
+				  System.out.println("lstdrpdwnvalues: "+RetnResult);
+			  
+				  
+		   		return RetnResult;
+			}
+			catch(Exception e){
+			  return UIConstants.KEYWORD_FAIL;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		
+		public String Ken_DropDown_GetSelected(String K_DD_Object) 
+		{
+		 	 APP_LOGS.debug("Ken_DropDown_GetSelected : ");
+		 	 String ExistSelected= "";
+		 	 try
+		 	 {
+		 		//To locate Drop down Object.
+				  WebElement K_DrpDwm_ELM = ChooseElement(OR.getProperty(K_DD_Object));				  
+				  ExistSelected =K_DrpDwm_ELM.getText();
+//				  //Get already selected values 
+//				  WebElement K_DrpDwm_ELM2 =BrowserElement(K_DrpDwm_ELM,"lstKendropdown_Selected");
+//				  ExistSelected = K_DrpDwm_ELM2.getText();
+		   		return ExistSelected;
+			}
+			catch(Exception e){
+			  return ExistSelected;
+			}
+		  		//return UIConstants.KEYWORD_FAIL;
+		 }
+		
+		
 }

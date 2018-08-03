@@ -13,6 +13,7 @@ import com.pearson.util.ReportUtil;
 import com.pearson.pages.LoginPage;
 import com.pearson.pages.LoggedIn;
 import com.pearson.pages.MyProfile;
+import com.pearson.pages.Students;
 import static com.pearson.Websteps.UICommonSteps.APP_LOGS;
 import static com.pearson.Websteps.UICommonSteps.CONFIG;
 import java.io.IOException;
@@ -27,12 +28,14 @@ public class MySteps {
 	public static LoginPage pagelogin;
 	public static LoggedIn pageloggedIn;
 	public static MyProfile pageProfile;
+	public static Students Students;
 	public static ReportUtil Rep;
 	public String InputDetails;
 	public String VerProfileRes;
+	public static String CurrentTestDataSheet;
 	
 	 @BeforeStory(uponGivenStory=false)
-	    public void beforeGivenStory(@Named("UserRole") String sUserRole) throws NumberFormatException, InterruptedException {
+	    public void beforeGivenStory(@Named("UserRole") String sUserRole, @Named("TestDataSheet") String sTestSheet) throws NumberFormatException, InterruptedException {
 
 	    	// Initialize reporting
 	    	Rep=new ReportUtil();
@@ -42,9 +45,13 @@ public class MySteps {
 			pagelogin=new LoginPage();
 			pageloggedIn=new LoggedIn();
 			pageProfile=new MyProfile();
+			Students= new Students();
 			
 	    	//Get userRole from Meta
 	    	CurrentUserRole=sUserRole;
+	    	
+	    	//Get testdatasheet and userRole from Meta
+	    	CurrentTestDataSheet=sTestSheet;
 	    	
 	    	//Generate Test case number for every story
 	    	iTCGenNo=0;
@@ -143,6 +150,7 @@ public class MySteps {
 		
 		pagelogin.doLogin2(URL, Username, Password);
 		InputDetails="The login details are <\br> Username :"+Username+"\n <\br>Pasword: "+Password;
+		//Students.CreateStudent();
 	}
 	
 	@When("user selects the Login button")
@@ -158,16 +166,7 @@ public class MySteps {
 		String ActualRes;
 		String TCID=sTCNoTemplate+iTCGenNo;
 		String TCName="Login -"+CurrentUserRole;
-		String warning=pagelogin.VerifyWarning();
-		if (warning=="FAIL")
-		{
-			APP_LOGS.debug("Login Failed with warning");
-			keywords.captureScreenshot("TC01_Login",warning);
-			ActualRes="User login failed with warning : "+warning;
-			Rep.ReportExcelData(TCID,TCName,"The login functionality with "+CurrentUserRole+" user",InputDetails,"Login should be successful","FAIL",ActualRes,"");
-		}
-		else
-		{
+		
 		String Rsult=pageloggedIn.VerifyLoggedIn1();
 		if (Rsult=="PASS")
 		{
@@ -181,14 +180,36 @@ public class MySteps {
 		}
 		Rep.ReportExcelData(TCID,TCName,"The login functionality with "+CurrentUserRole+" user",InputDetails,"Login should be successful",Rsult,ActualRes,"");
 		
-		}
 		
 	}
 	
 	
 	@Given("user select create and provide the student details")
-	public void givenUserSelectCreateAndProvideTheStudentDetails(){
+	public void givenUserSelectCreateAndProvideTheStudentDetails(@Named("Enrolled_Organization") String Enrolled_Organization,@Named("State_Student_ID") String State_Student_ID,
+			@Named("Local_State_ID") String Local_State_ID,
+			@Named("LastName") String LastName,
+			@Named("FirstName") String FirstName,
+			@Named("MiddleName") String MiddleName,
+			@Named("Birthdate") String Birthdate,
+			@Named("Gender") String Gender,
+			@Named("Grade") String Grade,
+			@Named("Resp_Sch_Code") String Resp_Sch_Code,
+			@Named("Ship_Organization") String Ship_Organization,
+			@Named("Hispanic") String Hispanic,
+			@Named("Race_Asian") String Race_Asian,
+			@Named("American_Indian") String American_Indian,
+			@Named("African_American") String African_American,
+			@Named("Native_Hawaiian") String Native_Hawaiian,
+			@Named("White") String White,
+			@Named("Two_More_Races") String Two_More_Races,
+			@Named("English_Learner") String English_Learner,
+			@Named("Title_III_Limited") String Title_III_Limited,
+			@Named("Gifted_Talented") String Gifted_Talented,
+			@Named("Migrant_Status") String Migrant_Status,
+			@Named("Student_Disabilities") String Student_Disabilities
+){
 		 //TODO 
+		Students.CreateStudent(Enrolled_Organization,State_Student_ID,Local_State_ID,LastName,FirstName,MiddleName,Birthdate,Gender,Grade,Resp_Sch_Code,Ship_Organization,Hispanic,Race_Asian,American_Indian,African_American,Native_Hawaiian,White,Two_More_Races,English_Learner,Title_III_Limited,Gifted_Talented,Migrant_Status,Student_Disabilities);
 	}
 	@When("user select the save button")
 	public void whenUserSelectTheSaveButton(){
@@ -201,7 +222,7 @@ public class MySteps {
 		
 	@AfterStory(uponGivenStory=false)
 	public void afterGivenStory() throws NumberFormatException, InterruptedException {
-		keywords.click("btnLogout", "data ");
+	//	keywords.click("btnLogout", "data ");
 		pageloggedIn.VerifyLoggedOut();
 		keywords.pause("2", "2");
 		keywords.closeBroswer("Browser", "Quit");
